@@ -6,7 +6,17 @@ import { Card } from '../../components/card';
 import { Input } from '../../components/input';
 import { Logo } from '../../components/logo';
 import { Title } from '../../components/title';
-import { Balance, Filters, Header, InputGroup, Main, Section } from './styles';
+import {
+  Balance,
+  ChartAction,
+  ChartContainer,
+  ChartContent,
+  Filters,
+  Header,
+  InputGroup,
+  Main,
+  Section,
+} from './styles';
 
 export function Home() {
   return (
@@ -52,6 +62,40 @@ export function Home() {
             <Card title="Saldo" amount={1000000} variant="incomes" />
             <Card title="Saldo" amount={1000000} variant="expenses" />
           </Balance>
+
+          <ChartContainer>
+            <header>
+              <Title
+                title="Gastos"
+                subtitle="Despesas por categoria no período"
+              />
+            </header>
+
+            <ChartContent></ChartContent>
+          </ChartContainer>
+
+          <ChartContainer>
+            <header>
+              <Title
+                title="Evolução Financeira"
+                subtitle="Saldo, Receitas e Gastos no ano"
+              />
+
+              <ChartAction>
+                <InputMask
+                  component={Input}
+                  mask="aaaa"
+                  replacement={{ d: /\d/, m: /\d/, a: /\d/ }}
+                  variant="black"
+                  label="Ano"
+                  placeholder="aaaa"
+                />
+                <ButtonIcon />
+              </ChartAction>
+            </header>
+
+            <ChartContent></ChartContent>
+          </ChartContainer>
         </Section>
       </Main>
     </>
