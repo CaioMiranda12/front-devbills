@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@nivo/pie": "^0.85.1",
     "@radix-ui/react-dialog": "^1.0.5",
     "@react-input/mask": "^1.0.22",
     "@react-input/number-format": "^1.0.22",
